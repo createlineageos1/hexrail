@@ -3,6 +3,7 @@ hexrail is a emulated CLI-based OS, and based on the OrbitOS kernel
 
 # Making an app for Hexrail
 Its very easy. First of all, you need a basic Python programming knowledge.
+Make sure that Python and zip is installed on your Linux machine.
 
 # Step 1: Making app
 
