@@ -13,7 +13,7 @@ class CommandProcessor:
   @staticmethod
   @process_management(priority=3)
   def cmd():
-    print("showfetch, usrdata, systurnoff, bored, ota")
+    print("showfetch, usrdata, systurnoff, bored, ota, hme")
 
   @staticmethod
   @process_management(priority=1)
@@ -36,3 +36,8 @@ class CommandProcessor:
     print("User:", usr)
     print("OS:", os)
     print("UI:", ui)
+
+  @staticmethod
+  @process_management(priority=1)
+  def hme():
+      webbrowser.open("https://www.figma.com/proto/6BIq0bwjp4UNTA4k137S5L/hexmobenv?node-id=1-1587&t=VtsHSvo6nCksWXqK-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
