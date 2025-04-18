@@ -10,11 +10,24 @@ from kernel import Kernel
 
 cp = CommandProcessor()
 
+ascii = """
+ _                         _ _ 
+ | |                       (_) |
+ | |__   _____  ___ __ __ _ _| |
+ | '_ \ / _ \ \/ / '__/ _` | | |
+ | | | |  __/>  <| | | (_| | | |
+ |_| |_|\___/_/\_\_|  \__,_|_|_|
+                                
+Available for mobile, PC                             
+"""
+
 def loading():
     for i in range(0, 101):
         time.sleep(0.0099)
         sys.stdout.write("\rStarting hexrail.. " + str(i) + "%")
         sys.stdout.flush()
+
+    print(ascii)
     print("\n H E X R A I L")
 
 system_commands = [
@@ -23,7 +36,8 @@ system_commands = [
     'cp.showfetch',
     'cp.systurnoff',
     'cp.ota',
-    'cp.usrdata'
+    'cp.usrdata',
+    'cp.hme'
 ]
 
 kernel = Kernel()
