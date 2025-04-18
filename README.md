@@ -3,7 +3,7 @@ hexrail is a emulated CLI-based OS, and based on the OrbitOS kernel
 
 # Making an app for Hexrail
 Its very easy. First of all, you need a basic Python programming knowledge.
-Make sure that Python and zip is installed on your Linux machine.
+Make sure that Python3 and zip is installed on your Linux machine.
 
 # Step 1: Making app
 
@@ -50,7 +50,7 @@ Now we builded our first app. To test it, we are going to use package manager. G
 # Step 6: Making app
 
 ```
-python package_manager.py
+python3 package_manager.py
 ```
 
 # Step 7: Making app
