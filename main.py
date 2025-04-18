@@ -18,17 +18,12 @@ def loading():
     print("\n H E X R A I L")
 
 system_commands = [
-    'cp.faq',
-    'cp.ipg',
-    'cp.help',
+    'cp.cmd',
     'cp.bored',
-    'cp.clear',
-    'cp.Neofetch',
-    'cp.rservice',
-    'cp.shutdown',
-    'cp.software_update',
-    'cp.weather',
-    'cp.whoami'
+    'cp.showfetch',
+    'cp.systurnoff',
+    'cp.ota',
+    'cp.usrdata'
 ]
 
 kernel = Kernel()
@@ -36,14 +31,14 @@ kernel = Kernel()
 loading()
 
 c = colored
-print(c("Welcome to OrbitOS beta! type 'help' to see a list of available commands!", "yellow"))
+print(c("HEXRAIL 1, AVAILABLE FOR MOBILE AND PC, UNDER APACHE 2.0 LICENSE.", "yellow"))
 
 today = date.today()
 print("Today's date:", today)
 c = colored
 print(c("security patch: 1 march 2024", "red"))
 while True:
-    user_input = input(f"root@orbitos:{os.curdir}/$>> ").split(" ")
+    user_input = input(f"usr@hexrail:{os.curdir}/$>> ").split(" ")
     entered_command = user_input[0]
     args = user_input[1:]
     
