@@ -18,7 +18,7 @@ class CommandProcessor:
   @staticmethod
   @process_management(priority=1)
   def ota():
-    webbrowser.open("https://www.figma.com/proto/Xl70GkHcPBv0fywmeZT2FT/hexrail-updates?node-id=1-2&p=f&t=3DvVl8pyKf0qqzeQ-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
+    webbrowser.open("https://www.figma.com/proto/gVbll3jSnVPksZsyF6wghE/Untitled?node-id=0-1&p=f&t=4wQynKV5aFOD5vNf-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
 
   @staticmethod
   @process_management(priority=2)
