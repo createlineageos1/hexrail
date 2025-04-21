@@ -2,7 +2,7 @@
 hexrail is a emulated CLI-based OS, and based on the OrbitOS kernel
 
 # Required modules and apps to run Hexrail
-Termcolor, install it via: ```pip install termcolor```.
+Termcolor, install it via: ```pip install termcolor```. (Install Python3 first)
 Python, install it via: ```sudo apt install python3```. (for Linux, Debian machines)
 
 # Making an app for Hexrail
