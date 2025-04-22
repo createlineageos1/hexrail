@@ -1,0 +1,2 @@
+- 1.1: Commands added: bored, trigger_panic
+- 1.1.1: Kernel safety upgraded
