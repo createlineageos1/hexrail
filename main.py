@@ -37,6 +37,7 @@ system_commands = [
     'cp.systurnoff',
     'cp.ota',
     'cp.usrdata',
+    'cp.trigger_panic',
     'cp.hme'
 ]
 
