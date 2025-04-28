@@ -1,108 +1,83 @@
-import ctypes
 import functools
 import logging
 import time
+import sys
 
 logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s',
-                    handlers=[logging.FileHandler('kernel.log'),
+                    format="%(asctime)s - %(levelname)s - %(message)s",
+                    handlers=[logging.FileHandler("system_kernel.log"),
                               logging.StreamHandler()])
 
-ERROR_PROCESS_MANAGEMENT = "0xe1_kernel"
-ERROR_MEMORY_EXHAUSTION = "0xe2_kernel"
+KERNEL_ERRORS = {
+    'PROCESS_FAIL': '0xF1',
+    'MEMORY_OVERFLOW': '0xF2'
+}
 
 class Process:
-    def __init__(self, pid, name, memory_id, priority=0):
-        self.pid = pid
+    def __init__(self, name, memory_block, priority=1):
         self.name = name
-        self.memory_id = memory_id
+        self.memory_block = memory_block
         self.priority = priority
+        self.pid = id(self)
 
-class MemoryManager:
+class Memory:
     def __init__(self):
-        self.allocated_memory = {}
+        self.storage = {}
 
-    def allocate_memory(self, size):
-        mem = ctypes.create_string_buffer(size)
-        self.allocated_memory[id(mem)] = (mem, size)
-        return id(mem)
+    def alloc(self, size):
+        block = bytearray(size)
+        self.storage[id(block)] = block
+        return block
 
-    def deallocate_memory(self, mem_id):
-        mem, size = self.allocated_memory.pop(mem_id, (None, None))
-        if mem is not None:
-            ctypes.cast(mem, ctypes.c_void_p).value = 0
-            ctypes.pythonapi.PyMem_Free(mem)
+    def free(self, block):
+        block_id = id(block)
+        if block_id in self.storage:
+            del self.storage[block_id]
 
 class Kernel:
     def __init__(self):
-        self.processes = []
-        self.memory_manager = MemoryManager()
-        self.next_pid = 1
+        self.memory = Memory()
+        self.process_list = []
+        self.max_processes = 1000
 
-    def process_exists(self, pid):
-        for process in self.processes:
-            if process.pid == pid:
-                return True
-        return False
+    def spawn(self, name, priority=1, mem_size=1024):
+        if len(self.process_list) >= self.max_processes:
+            self.panic('Memory overflow', KERNEL_ERRORS['MEMORY_OVERFLOW'])
+        block = self.memory.alloc(mem_size)
+        proc = Process(name, block, priority)
+        self.process_list.append(proc)
+        logging.info(f"Spawned process {proc.name} with PID {proc.pid}")
+        return proc.pid
 
-    def create_process(self, name, priority=0, memory_size=1024):
-        for process in self.processes:
-            if process.pid == 0:
-                logging.warning("Kernel process already exists. Cannot create another process with the same PID.")
-                return
-        if len(self.processes) >= 1000:
-            logging.error("Memory exhaustion: Maximum number of processes reached.")
-            self.kernel_panic("Memory exhaustion", ERROR_MEMORY_EXHAUSTION)
-        pid = self.next_pid
-        self.next_pid += 1
-        process_memory_id = self.memory_manager.allocate_memory(memory_size)
-        process = Process(pid, name, process_memory_id, priority)
-        self.processes.append(process)
-        logging.info(f"Process created - PID: {pid}, Name: {name}, Memory: {memory_size} bytes.")
-        return pid
-
-    def kill_process(self, pid):
-        if pid == 0:
-            logging.warning("Cannot kill the Kernel process.")
+    def destroy(self, pid):
+        proc = next((p for p in self.process_list if p.pid == pid), None)
+        if not proc:
+            logging.warning(f"No such process with PID {pid}")
             return
-        for i, process in enumerate(self.processes):
-            if process.pid == pid:
-                self.memory_manager.deallocate_memory(process.memory_id)
-                del self.processes[i]
-                logging.info(f"Process terminated - PID: {pid}, Name: {process.name}")
-                return
-        logging.warning(f"Process with PID {pid} not found.")
+        self.memory.free(proc.memory_block)
+        self.process_list.remove(proc)
+        logging.info(f"Killed process {proc.name} with PID {proc.pid}")
 
-    def kernel_panic(self, message, error_code):
-        logging.error(f"KERNEL PANIC: {message}, error Code: {error_code}, restarting the system may fix the issue.")
-        exit()
+    def panic(self, msg, code):
+        logging.critical(f"KERNEL PANIC: {msg}, Code: {code}")
+        sys.exit(1)
 
 kernel = Kernel()
 
 def process_management(priority=1):
-    def decorator(func):
+    def wrap(func):
         @functools.wraps(func)
-        def wrapper(*args, **kwargs):
+        def inner(*args, **kwargs):
+            pid = None
             try:
-                pid = kernel.create_process(func.__name__, priority=priority)
+                pid = kernel.spawn(func.__name__, priority)
                 result = func(*args, **kwargs)
-                kernel.kill_process(pid)
                 return result
             except Exception as e:
-                logging.error(f"Kernel error occured: {e}")
-                kernel.kernel_panic("Process management error", ERROR_PROCESS_MANAGEMENT)
-        return wrapper
-    return decorator
-
-def kernel_main():
-    kernel = Kernel()
-    while True:
-        try:
-            logging.debug("Kernel is running")
-            time.sleep(1)
-        except Exception as e:
-            logging.error(f"Error in kernel main loop: {e}")
-
-
-if __name__ == "__main__":
-    kernel_main()
+                logging.error(f"Error during process: {e}")
+                kernel.panic('Process fail', KERNEL_ERRORS['PROCESS_FAIL'])
+            finally:
+                if pid:
+                    kernel.destroy(pid)
+        return inner
+    return wrap
