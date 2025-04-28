@@ -23,7 +23,7 @@ class CommandProcessor:
     @staticmethod
     @process_management(priority=1)
     def systurnoff():
-        confirm = input("Are you sure you want to turn off the system? (yes/no): ")
+        confirm = input("Are you sure you want to turn off the Hexrail system? (yes/no): ")
         if confirm.lower() == "yes":
             print("System turning off...")
             exit()
