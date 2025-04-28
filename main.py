@@ -11,7 +11,7 @@ from kernel import Kernel
 cp = CommandProcessor()
 
 ascii = r"""
- _                         _ _ 
+  _                           _ 
  | |                       (_) |
  | |__   _____  ___ __ __ _ _| |
  | '_ \ / _ \ \/ / '__/ _` | | |
