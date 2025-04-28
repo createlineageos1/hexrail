@@ -17,8 +17,7 @@ ascii = """
  | '_ \ / _ \ \/ / '__/ _` | | |
  | | | |  __/>  <| | | (_| | | |
  |_| |_|\___/_/\_\_|  \__,_|_|_|
-                                
-Available for mobile, PC                             
+                   
 """
 
 def loading():
@@ -37,8 +36,9 @@ system_commands = [
     'cp.systurnoff',
     'cp.ota',
     'cp.usrdata',
-    'cp.trigger_panic',
-    'cp.hme'
+    'cp.hme',
+    'cp.watch',
+    'cp.movie'
 ]
 
 kernel = Kernel()
@@ -46,7 +46,7 @@ kernel = Kernel()
 loading()
 
 c = colored
-print(c("HEXRAIL 1, AVAILABLE FOR MOBILE AND PC, UNDER APACHE 2.0 LICENSE.", "yellow"))
+print(c("hexrail under APACHE-2.0 LICENSE.", "yellow"))
 
 today = date.today()
 print("Today's date:", today)
