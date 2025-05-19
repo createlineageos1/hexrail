@@ -72,7 +72,3 @@ Now we are ready to run our first app.
 ```
 run myapp
 ```
-
-# Filesystem of Hexrail
-
-filesystem folder: Filesystem of Hexrail
