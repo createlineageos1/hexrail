@@ -1,5 +1,5 @@
 # Hexrail
-Hexrail is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source.
+Hexrail is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit Hexrail apps and publish it.
 
 # Required modules and apps to run Hexrail
 Termcolor, install it via: ```pip install termcolor```. (Install Python3 first)
@@ -72,3 +72,7 @@ Now we are ready to run our first app.
 ```
 run myapp
 ```
+
+# Filesystem of Hexrail
+
+filesystem folder: Filesystem of Hexrail
