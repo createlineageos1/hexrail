@@ -17,12 +17,12 @@ in accordance with the terms of the Apache License 2.0.
 
 2. Proprietary Application Scripts
 
-All application scripts, source code, and related files built on top of the Hexrail Operating System core
+All Hexrail application scripts, Hexrail application source code, and related files built on top of the Hexrail Operating System core
 are licensed as proprietary and closed source.
 
 You MAY NOT:
 
-- Copy, distribute, sublicense, or modify the proprietary application scripts without explicit permission from Hexrail.
+- Copy, distribute, sublicense, or modify the proprietary applications or application scripts without explicit permission from Hexrail.
 - Reverse engineer, decompile, or attempt to derive source code from the proprietary application scripts.
 - Publicly host, share, or redistribute proprietary application scripts.
 
@@ -31,11 +31,5 @@ You MAY NOT:
 The open source components are provided "AS IS", without warranties or conditions of any kind.
 
 Hexrail shall not be held liable for any damages arising from the use of either open source components or proprietary applications.
-
-4. Contact Information
-
-For licensing inquiries or permissions, please contact: contact@hexrail.dev
-
----
 
 By using the Hexrail Operating System, you agree to comply with the terms of this license.
