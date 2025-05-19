@@ -56,6 +56,7 @@ Now we builded our first app. To test it, we are going to use package manager. G
 ```
 python3 package_manager.py
 ```
+Warning: Never use python command, instead use python3 command.
 
 # Step 7: Making app
 
