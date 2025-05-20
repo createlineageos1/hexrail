@@ -6,7 +6,15 @@ from datetime import date
 from termcolor import colored
 from commands import CommandProcessor
 from kernel import Kernel
+import webbrowser
 
+uiboot = input("Do you want to boot into Hexrail UI? (y/n): ").strip().lower()
+
+if uiboot == 'y':
+    webbrowser.open("https://www.figma.com/proto/6BIq0bwjp4UNTA4k137S5L/hexmobenv?node-id=1-417&t=JoCsnjV4sPCr4Qxk-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
+
+else:
+    print("Booting...")
 
 cp = CommandProcessor()
 
