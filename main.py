@@ -50,7 +50,7 @@ else:
 def loading():
     for i in range(0, 101):
         time.sleep(0.0099)
-        sys.stdout.write("\rStarting hexrail.. " + str(i) + "%")
+        sys.stdout.write("\rStarting Hexroid system.. " + str(i) + "%")
         sys.stdout.flush()
 
     print(ascii)
