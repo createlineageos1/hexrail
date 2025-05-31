@@ -4,6 +4,21 @@ import zipfile
 REPO_DIR = "repo"
 INSTALL_DIR = "installed"
 PACKAGE_DB = "packages.txt"
+EASTER_EGG = r"""
+
+ /$$   /$$                                         /$$       /$$
+| $$  | $$                                        |__/      | $$
+| $$  | $$  /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$  /$$  /$$$$$$$
+| $$$$$$$$ /$$__  $$|  $$ /$$/ /$$__  $$ /$$__  $$| $$ /$$__  $$
+| $$__  $$| $$$$$$$$ \  $$$$/ | $$  \__/| $$  \ $$| $$| $$  | $$
+| $$  | $$| $$_____/  >$$  $$ | $$      | $$  | $$| $$| $$  | $$
+| $$  | $$|  $$$$$$$ /$$/\  $$| $$      |  $$$$$$/| $$|  $$$$$$$
+|__/  |__/ \_______/|__/  \__/|__/       \______/ |__/ \_______/
+                                                                
+                                                                
+                                                                
+"""
+
 
 def ensure_dirs():
     os.makedirs(REPO_DIR, exist_ok=True)
@@ -80,6 +95,8 @@ def handle_pm_command(cmd):
         help_menu()
     elif parts[0] == "exit":
         exit()
+    elif parts[0] == "easteregg":
+        print("Mini easter egg :D :" + EASTER_EGG)
     else:
         print("Unknown command. Type 'help'.")
 
