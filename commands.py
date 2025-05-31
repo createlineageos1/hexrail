@@ -1,10 +1,11 @@
 import random
 from termcolor import colored
-import os
 import webbrowser
 from kernel import process_management
+import os
+import subprocess
 
-usr = "hexrail"
+usr = "hexroid"
 os_version = "hexrail 1.3 KERNEL_UPDATE"
 ui = "CLI_based"
 
@@ -23,7 +24,7 @@ class CommandProcessor:
     @staticmethod
     @process_management(priority=1)
     def systurnoff():
-        confirm = input("Are you sure you want to turn off the Hexrail system? (yes/no): ")
+        confirm = input("Are you sure you want to turn off the Hexroid system? (yes/no): ")
         if confirm.lower() == "yes":
             print("System turning off...")
             exit()
@@ -87,27 +88,3 @@ class CommandProcessor:
         print(colored("watch - Open YouTube", "yellow"))
         print(colored("movie - Open Netflix", "yellow"))
         print(colored("exit - Exit the system", "yellow"))
-        
-        while True:
-            command = input(colored(f"{usr}@{os_version} > ", "yellow"))
-            if command == "showfetch":
-                CommandProcessor.showfetch()
-            elif command == "usrdata":
-                CommandProcessor.usrdata()
-            elif command == "systurnoff":
-                CommandProcessor.systurnoff()
-            elif command == "ota":
-                CommandProcessor.ota()
-            elif command == "hme":
-                CommandProcessor.hme()
-            elif command == "bored":
-                CommandProcessor.bored()
-            elif command == "watch":
-                CommandProcessor.watch()
-            elif command == "movie":
-                CommandProcessor.movie()
-            elif command == "exit":
-                print("Exiting HexrailTV...")
-                break
-            else:
-                print(colored(f"Unknown command: {command}", "red"))
