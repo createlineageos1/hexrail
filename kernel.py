@@ -46,7 +46,6 @@ class Kernel:
         block = self.memory.alloc(mem_size)
         proc = Process(name, block, priority)
         self.process_list.append(proc)
-        logging.info(f"Spawned process {proc.name} with PID {proc.pid}")
         return proc.pid
 
     def destroy(self, pid):
@@ -56,7 +55,6 @@ class Kernel:
             return
         self.memory.free(proc.memory_block)
         self.process_list.remove(proc)
-        logging.info(f"Killed process {proc.name} with PID {proc.pid}")
 
     def panic(self, msg, code):
         logging.critical(f"KERNEL PANIC: {msg}, Code: {code}")
