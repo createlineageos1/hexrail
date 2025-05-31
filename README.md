@@ -1,11 +1,12 @@
-# Hexrail
-Hexrail is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit Hexrail apps and publish it.
+# Hexroid
+Hexroid is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit Hexrail apps and publish it.
+Hexrail is replaced by Hexroid, but its based on Hexrail system.
 
 # Required modules and apps to run Hexrail
 Termcolor, install it via: ```pip install termcolor```. (Install Python3 first)
 Python, install it via: ```sudo apt install python3```. (for Linux, Debian machines)
 
-# Making an app for Hexrail
+# Making an app for Hexroid
 Its very easy. First of all, you need a basic Python programming knowledge.
 Make sure that Python3 and zip is installed on your Linux machine.
 
