@@ -6,7 +6,7 @@ import os
 import subprocess
 
 usr = "hexroid"
-os_version = "hexrail 1.3 KERNEL_UPDATE"
+os_version = "hexroid 1.0"
 ui = "CLI_based"
 
 class CommandProcessor:
