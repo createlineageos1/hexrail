@@ -54,7 +54,7 @@ def loading():
         sys.stdout.flush()
 
     print(ascii)
-    print("\n H E X R A I L")
+    print("\n H E X R O I D")
 
 system_commands = [
     'cp.cmd',
@@ -76,7 +76,7 @@ today = date.today()
 print("Today's date:", today)
 c = colored
 while True:
-    user_input = input(f"Enter command or app name 'cmd' for help:").split(" ")
+    user_input = input(f"Enter command 'cmd' for help:").split(" ")
     entered_command = user_input[0]
     args = user_input[1:]
     
