@@ -5,6 +5,9 @@ from kernel import process_management
 import os
 import subprocess
 
+# Configuration settings, this is the information where usrdata gets
+# It is a main brain of usrdata
+
 usr = "hexroid"
 os_version = "hexroid 1.0"
 ui = "CLI_based"
@@ -77,7 +80,7 @@ class CommandProcessor:
     @process_management(priority=1)
     def cmd():
         """Basic command processor"""
-        print(colored("Welcome to HexrailTV CLI.", "green"))
+        print(colored("Welcome to Hexroid CLI", "green"))
         print(colored("Available commands:", "cyan"))
         print(colored("showfetch - Display system information", "yellow"))
         print(colored("usrdata - Display user data", "yellow"))
