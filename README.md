@@ -8,6 +8,9 @@ Python, install it via: ```sudo apt install python3```. (For Linux, Debian machi
 (If you want to ask math questions to Hexroid Zeus and u have CUDA GPU:) PyTorch GPU, install it via ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118```. (For CUDA GPUs, for Hexroid Zeus and Victus 1M)
 (If you want to ask math questions to Hexroid Zeus and u have CPU:) PyTorch CPU, install it via ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu```. (For CPUs, for Hexroid Zeus and Victus 1M)
 
+# Testing
+We are testing Hexroid/Hexrail versions in our home datacenters/servers.
+
 # Making an app for Hexroid
 Its very easy. First of all, you need a basic Python programming knowledge.
 Make sure that Python3 and zip is installed on your Linux machine.
