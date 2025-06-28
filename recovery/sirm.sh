@@ -6,5 +6,5 @@ git clone --single-branch --branch hexroid_1.0 https://github.com/createlineageo
 cd hexrail
 echo The main Hexrail directory located at:
 pwd
-echo [+] Installation finished, booting to Hexrail system...
+echo [+] Installation finished, booting to Hexroid system...
 python3 main.py
