@@ -26,7 +26,7 @@ class CommandProcessor:
 
     @staticmethod
     @process_management(priority=1)
-    def systurnoff():
+    def shutdown():
         confirm = input("Are you sure you want to turn off the Hexroid system? (yes/no): ")
         if confirm.lower() == "yes":
             print("System turning off...")
@@ -43,7 +43,7 @@ class CommandProcessor:
 
     @staticmethod
     @process_management(priority=1)
-    def hme():
+    def ui():
         print("Opening HexMobEnv...")
         webbrowser.open("https://www.figma.com/proto/6BIq0bwjp4UNTA4k137S5L/hexmobenv?node-id=1-1587&t=VtsHSvo6nCksWXqK-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
 
@@ -84,9 +84,9 @@ class CommandProcessor:
         print(colored("Available commands:", "cyan"))
         print(colored("showfetch - Display system information", "yellow"))
         print(colored("usrdata - Display user data", "yellow"))
-        print(colored("systurnoff - Turn off the system", "yellow"))
+        print(colored("shutdown - Turn off the system", "yellow"))
         print(colored("ota - Open OTA update page", "yellow"))
-        print(colored("hme - Open HexMobEnv page", "yellow"))
+        print(colored("ui - Open HexMobEnv page", "yellow"))
         print(colored("bored - Suggest an activity when bored", "yellow"))
         print(colored("watch - Open YouTube", "yellow"))
         print(colored("movie - Open Netflix", "yellow"))
