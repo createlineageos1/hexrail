@@ -55,15 +55,16 @@ def loading():
 
     print(ascii)
     print("\n H E X R O I D")
+    print("Whats new (v2.0): Optimized kernel, changed some commands")
 
 system_commands = [
     'cp.cmd',
     'cp.bored',
     'cp.showfetch',
-    'cp.systurnoff',
+    'cp.shutdown',
     'cp.ota',
     'cp.usrdata',
-    'cp.hme',
+    'cp.ui',
     'cp.watch',
     'cp.movie',
 ]
