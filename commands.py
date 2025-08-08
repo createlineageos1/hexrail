@@ -90,4 +90,3 @@ class CommandProcessor:
         print(colored("bored - Suggest an activity when bored", "yellow"))
         print(colored("watch - Open YouTube", "yellow"))
         print(colored("movie - Open Netflix", "yellow"))
-        print(colored("exit - Exit the system", "yellow"))
