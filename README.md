@@ -1,5 +1,5 @@
 # Hexroid
-Hexroid is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit Hexrail apps and publish it.
+Hexroid is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit stock Hexrail apps and publish it.
 Hexrail is replaced by Hexroid, but its based on Hexrail system.
 
 # Required modules and apps to run Hexroid
