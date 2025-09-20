@@ -1,10 +1,10 @@
 echo [+] SIRM Stock Image Recovery Mode
 echo Make sure that git, python3 and termcolor is installed
 sleep 2
-echo [+] Flashing new system... DO NOT PRESS CTRL + C WHILE INSTALLING THE HEXRAIL SYSTEM! THIS MAY ABORT THE INSTALLATION COMPLETELY!
-git clone https://github.com/createlineageos1/hexrail
+echo [+] Flashing new system... DO NOT PRESS CTRL + C WHILE INSTALLING THE HEXROID SYSTEM! THIS MAY ABORT THE INSTALLATION COMPLETELY!
+git clone --single-branch --branch hexroid_1.0 https://github.com/createlineageos1/hexrail/
 cd hexrail
-echo The main Hexrail directory located at:
+echo The main Hexroid directory located at:
 pwd
-echo [+] Installation finished, booting to Hexrail system...
+echo [+] Installation finished, booting to Hexroid system...
 python3 main.py

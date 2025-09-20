@@ -1,11 +1,15 @@
 import random
 from termcolor import colored
-import os
 import webbrowser
 from kernel import process_management
+import os
+import subprocess
 
-usr = "hexrail"
-os_version = "hexrail 1.3 KERNEL_UPDATE"
+# Configuration settings, this is the information where usrdata gets
+# It is a main brain of usrdata
+
+usr = "hexroid"
+os_version = "hexroid 1.0"
 ui = "CLI_based"
 
 class CommandProcessor:
@@ -22,8 +26,8 @@ class CommandProcessor:
 
     @staticmethod
     @process_management(priority=1)
-    def systurnoff():
-        confirm = input("Are you sure you want to turn off the Hexrail system? (yes/no): ")
+    def shutdown():
+        confirm = input("Are you sure you want to turn off the Hexroid system? (yes/no): ")
         if confirm.lower() == "yes":
             print("System turning off...")
             exit()
@@ -39,7 +43,7 @@ class CommandProcessor:
 
     @staticmethod
     @process_management(priority=1)
-    def hme():
+    def ui():
         print("Opening HexMobEnv...")
         webbrowser.open("https://www.figma.com/proto/6BIq0bwjp4UNTA4k137S5L/hexmobenv?node-id=1-1587&t=VtsHSvo6nCksWXqK-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1")
 
@@ -76,38 +80,13 @@ class CommandProcessor:
     @process_management(priority=1)
     def cmd():
         """Basic command processor"""
-        print(colored("Welcome to HexrailTV CLI.", "green"))
+        print(colored("Welcome to Hexroid CLI", "green"))
         print(colored("Available commands:", "cyan"))
         print(colored("showfetch - Display system information", "yellow"))
         print(colored("usrdata - Display user data", "yellow"))
-        print(colored("systurnoff - Turn off the system", "yellow"))
+        print(colored("shutdown - Turn off the system", "yellow"))
         print(colored("ota - Open OTA update page", "yellow"))
-        print(colored("hme - Open HexMobEnv page", "yellow"))
+        print(colored("ui - Open HexMobEnv page", "yellow"))
         print(colored("bored - Suggest an activity when bored", "yellow"))
         print(colored("watch - Open YouTube", "yellow"))
         print(colored("movie - Open Netflix", "yellow"))
-        print(colored("exit - Exit the system", "yellow"))
-        
-        while True:
-            command = input(colored(f"{usr}@{os_version} > ", "yellow"))
-            if command == "showfetch":
-                CommandProcessor.showfetch()
-            elif command == "usrdata":
-                CommandProcessor.usrdata()
-            elif command == "systurnoff":
-                CommandProcessor.systurnoff()
-            elif command == "ota":
-                CommandProcessor.ota()
-            elif command == "hme":
-                CommandProcessor.hme()
-            elif command == "bored":
-                CommandProcessor.bored()
-            elif command == "watch":
-                CommandProcessor.watch()
-            elif command == "movie":
-                CommandProcessor.movie()
-            elif command == "exit":
-                print("Exiting HexrailTV...")
-                break
-            else:
-                print(colored(f"Unknown command: {command}", "red"))

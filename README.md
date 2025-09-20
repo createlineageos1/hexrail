@@ -1,11 +1,17 @@
-# Hexrail
-Hexrail is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit Hexrail apps and publish it.
+# Hexroid
+Hexroid is a emulated CLI-based OS. It is NOT completely open-source: Hexrail apps are closed-source. The apps are source available, but we DON'T allow to users edit stock Hexrail apps and publish it.
+Hexrail is replaced by Hexroid, but its based on Hexrail system.
 
-# Required modules and apps to run Hexrail
+# Required modules and apps to run Hexroid
 Termcolor, install it via: ```pip install termcolor```. (Install Python3 first)
-Python, install it via: ```sudo apt install python3```. (for Linux, Debian machines)
+Python, install it via: ```sudo apt install python3```. (For Linux, Debian machines)
+(If you want to ask math questions to Hexroid Zeus and u have CUDA GPU:) PyTorch GPU, install it via ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118```. (For CUDA GPUs, for Hexroid Zeus and Victus 1M)
+(If you want to ask math questions to Hexroid Zeus and u have CPU:) PyTorch CPU, install it via ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu```. (For CPUs, for Hexroid Zeus and Victus 1M)
 
-# Making an app for Hexrail
+# Testing
+We are testing Hexroid/Hexrail versions in our home datacenters/servers.
+
+# Making an app for Hexroid
 Its very easy. First of all, you need a basic Python programming knowledge.
 Make sure that Python3 and zip is installed on your Linux machine.
 
